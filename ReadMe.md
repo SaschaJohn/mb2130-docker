@@ -1,3 +1,11 @@
+# MB2130-Docker
+![Contributors](https://img.shields.io/github/contributors/SaschaJohn/mb2130-docker?style=plastic)
+![Forks](https://img.shields.io/github/forks/SaschaJohn/mb2130-docker)
+![Stars](https://img.shields.io/github/stars/SaschaJohn/mb2130-docker)
+![Licence](https://img.shields.io/github/license/SaschaJohn/mb2130-docker)
+![Issues](https://img.shields.io/github/issues/SaschaJohn/mb2130-docker)
+
+## Description
 This docker container host a cups installation based on ubuntu:xenial.
 It includes the driver for the Panasonic KX-MB2130G and a cups configuration for this printer.
 
@@ -7,16 +15,22 @@ The motivation for this container was due to two facts:
 
 Both points are solved with this driver distribution.
 
-Configuration
+The current version can be pullerd from hub.docker.com:
 
-Windows:
+docker pull darkmessiah/ubuntu:qus1
+
+## Client configuration
+
+To use this driver instance either in your Windows installation or on your Android device, please see the following part for configuration.
+
+### Windows:
 
 Start - "Printers & Scanners" - Add device - Add manually
 "Add a printer using an IP Address or hostname"
 Device type : "IPP Device"
 Hostname or IP address: "http://<IP>:631/printers/a"
 
-Android:
+### Android:
 
 Goto Settings
 GotoConnections
@@ -33,14 +47,19 @@ Put in adress "ipp://<IP>/printers/a"
 
 Afterwards the printer is available in the print service
 
-
+## Container Execution
 
 To run this container, the cups port 631 has to be exposed:
 
-docker run -p "631:631" darkmessiah/ubuntu:qus1
+docker run -p "631:631" darkmessiah/ubuntu:qus1 
 
-Since this image is x86_64 only due to the driver binaries,
-it can't be run on other architectures.
+You can also use docker-compose to run with the attached docker-compose.yml file:
+
+docker-compose up -d
+
+### Note
+
+Since this image is x86_64 only due to the driver binaries, it can't be run on other architectures.
 However there is a possibility to run it on a RaspberryPi 4 linux/arm/v7 with the help of qemu.
 
 To do so, you need to install the qemu user files and register them for the image target architecture x86_64:
