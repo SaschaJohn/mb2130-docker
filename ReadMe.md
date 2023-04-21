@@ -7,6 +7,7 @@
 
 ## Description
 This docker container host a cups installation based on ubuntu:xenial.
+
 It includes the driver for the Panasonic KX-MB2130G and a cups configuration for this printer.
 
 The motivation for this container was due to two facts:
