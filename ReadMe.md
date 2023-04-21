@@ -29,8 +29,10 @@ To use this driver instance either in your Windows installation or on your Andro
 
 Start - "Printers & Scanners" - Add device - Add manually
 "Add a printer using an IP Address or hostname"
+![Screenshot](doc/Windows/2023-04-21%2009_26_30-Add%20Printer.png)
 Device type : "IPP Device"
 Hostname or IP address: "http://<IP>:631/printers/a"
+![Screenshot](doc/Windows/2023-04-21%2009_27_08-Add%20Printer.png)
 
 ### Android:
 
