@@ -119,4 +119,4 @@ Select "+ Add printer via IP address", Put in adress "ipp://<IP>/printers/a"
 
 Afterwards the printer is available in the print service
 
-![Screenshot](doc/Android/Screenshot_20230421_114052_Settings.jpg
+![Screenshot](doc/Android/Screenshot_20230421_114052_Settings.jpg)
