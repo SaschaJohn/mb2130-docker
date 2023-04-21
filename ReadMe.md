@@ -15,7 +15,7 @@ The motivation for this container was due to two facts:
 
 Both points are solved with this driver distribution.
 
-The current version can be pullerd from hub.docker.com:
+The current version can be pulled from [hub.docker.com](https://hub.docker.com/repository/docker/darkmessiah/ubuntu/general):
 
 ```shell
 docker pull darkmessiah/ubuntu:qus1
@@ -54,7 +54,9 @@ I tested it on "Docker version 23.0.4, build f480fb1"
 
 When you now run the image, it gives you a warning:
 
+```shell
 WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm/v7) and no specific platform was requested
+```
 
 Once you step into the container:
 
@@ -62,7 +64,7 @@ Once you step into the container:
 pi@raspberrypi:~/docker $ docker exec -it c8f4f46c83b3 bash
 ```
 
-you can see, that the binaries are not executed directly, but with the qemu-x86_64-static
+You can see, that the binaries are not executed directly, but with the qemu-x86_64-static
 
 ```shell
 root@c8f4f46c83b3:/# ps -ef
