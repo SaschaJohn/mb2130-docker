@@ -17,7 +17,9 @@ Both points are solved with this driver distribution.
 
 The current version can be pullerd from hub.docker.com:
 
+```shell
 docker pull darkmessiah/ubuntu:qus1
+```
 
 ## Client configuration
 
@@ -51,11 +53,15 @@ Afterwards the printer is available in the print service
 
 To run this container, the cups port 631 has to be exposed:
 
-docker run -p "631:631" darkmessiah/ubuntu:qus1 
+```shell
+docker run -p "631:631" darkmessiah/ubuntu:qus1
+```
 
 You can also use docker-compose to run with the attached docker-compose.yml file:
 
+```shell
 docker-compose up -d
+```
 
 ### Note
 
@@ -64,7 +70,9 @@ However there is a possibility to run it on a RaspberryPi 4 linux/arm/v7 with th
 
 To do so, you need to install the qemu user files and register them for the image target architecture x86_64:
 
+```shell
 sudo docker run --rm --privileged aptman/qus:d7.2 -s -- -p x86_64
+```
 
 As now now it worked with the LATEST version tag d7.2.
 With earlier version a saw segmentation faults/dumps due to errors in the binary cups filter.
@@ -78,12 +86,16 @@ WARNING: The requested image's platform (linux/amd64) does not match the detecte
 
 Once you step into the container:
 
+```shell
 pi@raspberrypi:~/docker $ docker exec -it c8f4f46c83b3 bash
+```
 
 you can see, that the binaries are not executed directly, but with the qemu-x86_64-static
 
+```shell
 root@c8f4f46c83b3:/# ps -ef
 UID        PID  PPID  C STIME TTY          TIME CMD
 root         1     0  0 09:51 ?        00:00:01 /qus/bin/qemu-x86_64-static /usr/sbin/cupsd -f
 root        25     0 13 09:59 pts/0    00:00:00 /qus/bin/qemu-x86_64-static /bin/bash
 root        42    25  0 09:59 ?        00:00:00 /bin/ps -ef
+```
