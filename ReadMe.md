@@ -21,39 +21,6 @@ The current version can be pullerd from hub.docker.com:
 docker pull darkmessiah/ubuntu:qus1
 ```
 
-## Client configuration
-
-To use this driver instance either in your Windows installation or on your Android device, please see the following part for configuration.
-
-### Windows:
-
-Start - "Printers & Scanners" - Add device - Add manually
-"Add a printer using an IP Address or hostname"
-
-![Screenshot](doc/Windows/2023-04-21%2009_26_30-Add%20Printer.png)
-
-Device type : "IPP Device"
-Hostname or IP address: "http://<IP>:631/printers/a"
-
-![Screenshot](doc/Windows/2023-04-21%2009_27_08-Add%20Printer.png)
-
-### Android:
-
-Goto Settings
-GotoConnections
-
-GotoOther settings
-Goto Print
-
-Enable "standard print service"
-Tap on "standard print service"
-Seelct Burger-Menu "Add printer"
-"+ Add printer via IP address"
-
-Put in adress "ipp://<IP>/printers/a"
-
-Afterwards the printer is available in the print service
-
 ## Container Execution
 
 To run this container, the cups port 631 has to be exposed:
@@ -104,3 +71,49 @@ root         1     0  0 09:51 ?        00:00:01 /qus/bin/qemu-x86_64-static /usr
 root        25     0 13 09:59 pts/0    00:00:00 /qus/bin/qemu-x86_64-static /bin/bash
 root        42    25  0 09:59 ?        00:00:00 /bin/ps -ef
 ```
+  
+## Client configuration
+
+To use this driver instance either in your Windows installation or on your Android device, please see the following part for configuration.
+
+### Windows:
+
+Start - "Printers & Scanners" - Add device - Add manually
+"Add a printer using an IP Address or hostname"
+
+![Screenshot](doc/Windows/2023-04-21%2009_26_30-Add%20Printer.png)
+
+Device type : "IPP Device"
+Hostname or IP address: "http://<IP>:631/printers/a"
+
+![Screenshot](doc/Windows/2023-04-21%2009_27_08-Add%20Printer.png)
+
+### Android:
+
+Go to Settings
+
+![Screenshot](doc/Android/Screenshot_20230421_113456_Settings.jpg)
+
+Go to Connections
+
+![Screenshot](doc/Android/Screenshot_20230421_113528_Settings.jpg)
+
+Go to down to "Other settings"
+
+![Screenshot](doc/Android/Screenshot_20230421_113531_Settings.jpg) ![Screenshot](doc/Android/Screenshot_20230421_113537_Settings.jpg)
+
+Go to Print
+
+![Screenshot](doc/Android/Screenshot_20230421_113550_Settings.jpg)
+
+Enable "standard print service", Tap on "standard print service", Select Burger-Menu "Add printer"
+
+![Screenshot](doc/Android/Screenshot_20230421_113649_Settings.jpg)
+
+Select "+ Add printer via IP address", Put in adress "ipp://<IP>/printers/a"
+
+![Screenshot](doc/Android/Screenshot_20230421_113812_Default%20Print%20Service.jpg)
+
+Afterwards the printer is available in the print service
+
+![Screenshot](doc/Android/Screenshot_20230421_114052_Settings.jpg
