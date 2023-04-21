@@ -1,0 +1,8 @@
+version: "3.3"
+
+services:
+  printer-mb2130:
+    image: darkmessiah/ubuntu:qus1
+    restart: always
+    ports:
+      - "631:631"
